@@ -1,8 +1,28 @@
 # Ilias
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ilias`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruby uses English words for language contructs, keywords, class names etc. It reads well already the way it is. Let's imagine we're building an authorization gem, we could start with something like:
 
-TODO: Delete this and the text above, and describe your gem
+```ruby
+class Role
+  attr_reader :permissions
+  def initialize(permissions)
+    @permissions = permissions
+  end
+
+  def can?(permission)
+    permissions.include?(permission)
+  end
+end
+```
+
+`permissions.include?(permission)` feels natural. Things get a *bit* solecistic when we call methods on single objects. Take this for example:
+
+```ruby
+array = [2, 4, 8, 10]
+array.include?(4)
+```
+I feel it'd be nice if we could alias it to agree with the third-person singular verb endings in English. You could argue that `include?` is not a verb and Ruby is not English, fair... but we use English diction in Ruby. Crystal [acknowledges](https://crystal-lang.org/api/1.4.1/Enumerable.html#includes%3F%28obj%29%3ABool-instance-method) 3rd person singular verb endings for method names.
+
 
 ## Installation
 
@@ -22,7 +42,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Include this project and use the aliases where you see fit in place of the core Ruby methods.
 
 ## Development
 
@@ -32,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ilias. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ilias/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on [GitHub](https://github.com/siaw23/ilias). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ilias/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
