@@ -40,6 +40,10 @@ class String
   alias includes? include?
   alias contains? includes?
 end
+
+class Object
+  alias is_an? is_a?
+end
 ```
 ## Installation
 
