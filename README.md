@@ -23,7 +23,24 @@ array.include?(4)
 ```
 I feel it'd be nice if we could alias it to agree with the third-person singular verb endings in English. You could argue that `include?` is not a verb and Ruby is not English, fair... but we use English diction in Ruby. Crystal [acknowledges](https://crystal-lang.org/api/1.4.1/Enumerable.html#includes%3F%28obj%29%3ABool-instance-method) 3rd person singular verb endings for method names.
 
+Here's a list of aliased methods:
 
+```ruby
+class Array
+  alias includes? include?
+end
+
+class Hash
+  alias includes? include?
+end
+
+class String
+  alias ends_with? end_with?
+  alias starts_with? start_with?
+  alias includes? include?
+  alias contains? includes?
+end
+```
 ## Installation
 
 Add this line to your application's Gemfile:
