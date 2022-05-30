@@ -5,8 +5,11 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in ilias.gemspec
 gemspec
 
-gem 'rake', '~> 13.0'
+group :development do
+  gem 'rake', '~> 13.0'
+  gem 'standard', '~> 1.3'
+end
 
-gem 'minitest', '~> 5.0'
-
-gem 'standard', '~> 1.3'
+group :test do
+  gem 'minitest', '~> 5.0'
+end

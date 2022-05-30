@@ -1,3 +1,3 @@
-class Enumerable
+module Enumerable
   alias includes? include?
 end

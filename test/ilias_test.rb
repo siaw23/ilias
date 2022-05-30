@@ -1,43 +1,40 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require_relative 'test_helper'
 
-class IliasTest < Minitest::Test
+class VersionTest < IliasTest
   def test_that_it_has_a_version_number
     refute_nil ::Ilias::VERSION
   end
+end
 
-  # Array
+class ArrayTest < IliasTest
   def test_array_includes_an_element
-    array = [1, 2]
-
-    assert array.includes?(1) == array.include?(1)
+    assert_alias_equivalence :includes?, :include?,
+                             on: [1], with: 1
   end
+end
 
-  # Hash
+class HashTest < IliasTest
   def test_hash_includes_an_element
-    array = { h: 'hash' }
-
-    assert array.includes?(:h) == array.include?(:h)
+    assert_alias_equivalence :includes?, :include?,
+                             on: { key: nil }, with: :key
   end
+end
 
-  # String
+class StringTest < IliasTest
   def test_string_ends_with_char
-    string = 'ruby'
-
-    assert string.ends_with? == string.end_with?
+    assert_alias_equivalence :ends_with?, :end_with?,
+                             on: 'ruby'
   end
 
   def test_string_starts_with_char
-    string = 'ruby'
-
-    assert string.starts_with? == string.start_with?
+    assert_alias_equivalence :starts_with?, :start_with?,
+                             on: 'ruby'
   end
 
   def test_string_includes_contains_char
-    string = 'ruby'
-
-    assert string.includes?('r') == string.include?('r')
-    assert string.contains?('r') == string.include?('r')
+    assert_alias_equivalence :include?, :includes?,
+                             on: 'ruby', with: 'r'
   end
 end
