@@ -47,6 +47,18 @@ class Object
   alias responds_to_missing? respond_to_missing?
 end
 
+class Enumerable
+  alias includes? include?
+end
+
+class BasicObject
+  alias equals? equal?
+end
+
+class Dir
+  alias exists? exist
+end
+
 ```
 ## Installation
 
