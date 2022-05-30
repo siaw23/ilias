@@ -27,7 +27,8 @@ Here's a list of aliased methods:
 
 ```ruby
 module Enumerable
-  # Some Ruby classes that include Enumerable
+  # Ruby classes that include Enumerable
+  #
   # Array
   # Dir
   # Hash
@@ -35,6 +36,7 @@ module Enumerable
   # Range
   # Set
   # Struct
+
   alias includes? include?
 end
 
