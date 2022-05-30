@@ -26,11 +26,15 @@ I feel it'd be nice if we could alias it to agree with the third-person singular
 Here's a list of aliased methods:
 
 ```ruby
-class Array
-  alias includes? include?
-end
-
-class Hash
+module Enumerable
+  # Some Ruby classes that include Enumerable
+  # Array
+  # Dir
+  # Hash
+  # IO
+  # Range
+  # Set
+  # Struct
   alias includes? include?
 end
 
@@ -45,10 +49,6 @@ class Object
   alias is_an? is_a?
   alias responds_to? respond_to?
   alias responds_to_missing? respond_to_missing?
-end
-
-class Enumerable
-  alias includes? include?
 end
 
 class BasicObject
