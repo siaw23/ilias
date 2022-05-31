@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Dir
-  alias exists? exist
+  alias exists? exist?
 end

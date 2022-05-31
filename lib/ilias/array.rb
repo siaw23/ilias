@@ -1,4 +1,5 @@
+# frozen_string_literal: true
+
 class Array
-  alias includes? include?
-  # alias intersects? intersect? RUBY_VERSION >= 3.1
+  alias intersects? intersect? if RUBY_VERSION >= '3.1'
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Object
   alias is_an? is_a?
   alias responds_to? respond_to?
